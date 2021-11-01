@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static let headerBackground = Color("detailsHeader")
+    static let headerBackground = Color("DetailsHeader") // Capitalised this one as git hub was strangely doing so just for this colorset when pushed
     static let searchBarBackground = Color("searchBarBackground")
     static let searchBarText = Color("searchBarText")
 }
