@@ -295,12 +295,12 @@ class FlagNameConverter {
         "Zanzibar" : "tanzania"
     ]
     
-    func flagImage(nationality: String, searchType: SearchType) -> Image {
+    func flagImage(nationality: String, searchType: SearchType) -> Image? {
         if searchType == .team, let flagImageName = teamsFlagsDictionary[nationality] {
             return Image(flagImageName)
         } else if searchType == .player, let flagImageName = playersFlagsDictionary[nationality] {
             return Image(flagImageName)
         }
-        return Image("China")
+        return nil
     }
 }

@@ -48,7 +48,7 @@ class PlayerViewModel: ObservableObject, Identifiable {
         return player.playerNationality
     }
     
-    var flagImage: Image {
+    var flagImage: Image? {
         return flagConverter.flagImage(nationality: nationality, searchType: .player)
     }
     
