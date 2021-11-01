@@ -1,5 +1,5 @@
 //
-//  FetchedPlayersView.swift
+//  FetchedResultsView.swift
 //  Football Guru
 //
 //  Created by Dave Bage on 28/10/2021.
@@ -7,27 +7,47 @@
 
 import SwiftUI
 
-struct FetchedPlayersView: View {
+struct FetchedResultsView: View {
     
-    @StateObject var fetchedPlayersViewModel = FetchedPlayersViewModel()
+    @EnvironmentObject var fetchedResultsVM: FetchedResultsViewModel
     
     var body: some View {
-        List {
-            ForEach(fetchedPlayersViewModel.fetchedPlayers, content: { player in
-                VStack {
-                    Text("\(player.playerFirstName) \(player.playerSecondName)")
-                    HStack {
-                        Text(player.playerAge)
-                        Text(player.playerClub)
+        NavigationView {
+            VStack {
+                SearchBar()
+                    .environmentObject(fetchedResultsVM)
+                Spacer()
+                if (fetchedResultsVM.fetchedPlayers.isEmpty && fetchedResultsVM.fetchedTeams.isEmpty) || fetchedResultsVM.state == .midSearch {
+                    if fetchedResultsVM.state == .midSearch {
+                        ProgressView()
+                            .padding()
                     }
+                    
+                    Placeholder(text: fetchedResultsVM.state.getPlaceholder()?.text ?? "", image: fetchedResultsVM.state.getPlaceholder()?.image)
+                    Spacer()
+                } else {
+                    List {
+                        if !fetchedResultsVM.fetchedPlayers.isEmpty {
+                            FetchedPlayersView()
+                                .environmentObject(fetchedResultsVM)
+                        }
+                        
+                        if !fetchedResultsVM.fetchedTeams.isEmpty {
+                            FetchedTeamsView()
+                                .environmentObject(fetchedResultsVM)
+                        }
+                    }
+                    .listStyle(.plain)
                 }
-            })
+            }
+            .navigationTitle(Strings.MainSearch.navTitle.localized)
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Prevents split screen on iPadOS
     }
 }
 
-struct FetchedPlayersView_Previews: PreviewProvider {
+struct FetchedResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        FetchedPlayersView()
+        FetchedResultsView()
     }
 }

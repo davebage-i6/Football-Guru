@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+internal class FootballGuruBundle { // A tag class that resources can use to identify this bundle
+    
+    static let shared = Bundle(for: FootballGuruBundle.self)
+}

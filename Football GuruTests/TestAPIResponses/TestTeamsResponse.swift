@@ -9,12 +9,11 @@ import XCTest
 import Foundation
 @testable import Football_Guru
 
-class TestPlayerResponse {
-    
-    static func playerData(player: Player) -> PlayerResponse? {
+class TestTeamsResponse {
+    static func teamData(team: Team) -> TeamResponse? {
         do {
             let decoder = JSONDecoder()
-            return try decoder.decode(PlayerResponse.self, from: testPlayerJSON(player: player))
+            return try decoder.decode(TeamResponse.self, from: testTeamJSON(team: team))
             
         } catch {
             XCTFail("Unable to decode data")
@@ -22,52 +21,24 @@ class TestPlayerResponse {
         }
     }
     
-    static func testPlayerJSON(player: Player) -> Data {
+    static func testTeamJSON(team: Team) -> Data {
         return """
             {
                 "result": {
-                    "players": [{
-                        "playerID": "\(player.id)",
-                        "playerFirstName": "\(player.playerFirstName)",
-                        "playerSecondName": "\(player.playerSecondName)",
-                        "playerNationality": "\(player.playerNationality)",
-                        "playerAge": "\(player.playerAge)",
-                        "playerClub": "\(player.playerClub)"
+                    "teams": [{
+                        "teamID": "\(team.id)",
+                        "teamName": "\(team.teamName)",
+                        "teamStadium": "\(team.teamStadium)",
+                        "isNation": "\(team.isNation)",
+                        "teamNationality": "\(team.teamNationality)",
+                        "teamCity": "\(team.teamCity)"
                     },{
-                        "playerID": "216819",
-                        "playerFirstName": "Maxime",
-                        "playerSecondName": "Lopez",
-                        "playerNationality": "French",
-                        "playerAge": "23",
-                        "playerClub": "Marseille"
-                    }, {
-                        "playerID": "112386",
-                        "playerFirstName": "Maxime",
-                        "playerSecondName": "Colin",
-                        "playerNationality": "French",
-                        "playerAge": "29",
-                        "playerClub": "Birmingham City"
-                    }, {
-                        "playerID": "23275",
-                        "playerFirstName": "Max",
-                        "playerSecondName": "Kruse",
-                        "playerNationality": "German",
-                        "playerAge": "33",
-                        "playerClub": "Werder Bremen"
-                    }, {
-                        "playerID": "14389",
-                        "playerFirstName": "Maxi",
-                        "playerSecondName": "Pereira",
-                        "playerNationality": "Uruguayan",
-                        "playerAge": "37",
-                        "playerClub": "FC Porto"
-                    }, {
-                        "playerID": "177622",
-                        "playerFirstName": "Maxwell",
-                        "playerSecondName": "Cornet",
-                        "playerNationality": "Ivorian",
-                        "playerAge": "25",
-                        "playerClub": "Lyon"
+                        "teamID": "3456",
+                        "teamName": "My team",
+                        "teamStadium": "Awesome Stadium",
+                        "isNation": "false",
+                        "teamNationality": "French",
+                        "teamCity": "Toulouse"
                     }],
                     "status": true,
                     "message": "0 Searched for Max",

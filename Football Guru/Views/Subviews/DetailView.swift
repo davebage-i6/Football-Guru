@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct DetailView: View {
+    struct Constants {
+        static let flagWidth: CGFloat = 25
+        static let padding: CGFloat = 5
+    }
+    
+    let text: String
+    let image: Image
+    let flag: Image?
+    let isMain: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            image
+            Text(text)
+                .font(isMain ? .headline : .none)
+                .foregroundColor(isMain ? Color.headerBackground : .none)
+            if let flag = flag {
+                flag
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: Constants.flagWidth, height: nil)
+            }
+        }
+        .padding(.bottom, Constants.padding)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(text: "Test", image: Image.Players.nameIcon, flag: Image("China"), isMain: false)
     }
 }

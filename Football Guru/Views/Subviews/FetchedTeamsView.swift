@@ -11,13 +11,13 @@ struct FetchedTeamsView: View {
     @EnvironmentObject var fetchedResultsVM: FetchedResultsViewModel
     
     var body: some View {
-        Section(header: Text("Teams"))  {
+        Section(header: Text(Strings.FetchedTeams.header.localized))  {
             ForEach(fetchedResultsVM.fetchedTeams, content: { team in
                 TeamView(team: team)
             })
             
             if fetchedResultsVM.teamsExpandable {
-                MoreResultsButton(action: fetchedResultsVM.getMoreTeams, buttonTitle: "More teams")
+                MoreResultsButton(action: fetchedResultsVM.getMoreTeams, buttonTitle: Strings.FetchedTeams.more.localized)
             }
         }
     }

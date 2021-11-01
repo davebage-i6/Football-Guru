@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class FavouriteButtonViewModel: ObservableObject {
+    func checkIfFavourite(player: PlayerViewModel) {
+        player.isFavourite = player.checkIfFavourite()
+    }
+}

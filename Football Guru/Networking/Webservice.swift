@@ -8,16 +8,15 @@
 import SwiftUI
 import Combine
 
-class Webservice {    
-    func fetchResults<T: Codable>(input: String, expecting: T.Type, searchType: String) -> AnyPublisher<T, Error> {
+class Webservice {
+    @Published var resultsFound = false
+    func fetchResults<T: Codable>(expecting: T.Type, query: SearchQuery) -> AnyPublisher<T, Error> {
         
-        var baseURL = URLComponents(string: "https://trials.mtcmobile.co.uk/api/football/1.0/search")
-        baseURL?.queryItems = [
-            URLQueryItem(name: "searchString", value: input),
-            URLQueryItem(name: "searchType", value: searchType)
-        ]
+        let baseURL = "https://trials.mtcmobile.co.uk/api/football/1.0/search"
         
-        guard let url = baseURL?.url else {
+        let endpoint = Endpoint(baseUrl: baseURL, params: query.params)
+        
+        guard let url = endpoint.url() else {
             fatalError("Unable to get url")
         }
         

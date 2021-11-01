@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct Endpoint {
+    let baseUrl: String
+    let params: [URLQueryItem]
+    
+    func url() -> URL? {
+        var url = URLComponents(string: baseUrl)
+        url?.queryItems = params
+        return url?.url
+    }
+}

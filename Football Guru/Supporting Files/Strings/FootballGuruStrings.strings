@@ -8,4 +8,38 @@
 
 // MARK: - Main search view
 
-"mainsearch.navtitle" = "Football Guru Search"
+"general.na" = "n/a";
+
+// MARK: - Main search view
+
+"mainsearch.navtitle" = "Football Guru Search";
+"mainsearch.searchbarplaceholder" = "Search players & teams";
+
+// MARK: - Favourites view
+
+"favouritesview.title" = "Favourites";
+"favouritesview.none" = "No favourites added";
+
+// MARK: - Search state
+
+"searchstate.newsearch" = "What are you waiting for?";
+"searchstate.midsearch" = "Searching...";
+
+// MARK: - Fetched players
+
+"fetchedplayers.header" = "Players";
+"fetchedplayers.more" = "More players";
+
+// MARK: - Player
+
+"player.age" = "Age";
+"player.club" = "Club";
+
+// MARK: - Fecthed teams
+
+"fetchedteams.header" = "Teams";
+"fetchedteams.more" = "More teams";
+
+
+
+

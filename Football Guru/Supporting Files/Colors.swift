@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension Color {
+    static let headerBackground = Color("detailsHeader")
+    static let searchBarBackground = Color("searchBarBackground")
+    static let searchBarText = Color("searchBarText")
+}
