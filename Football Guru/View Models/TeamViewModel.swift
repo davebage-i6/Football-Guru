@@ -31,7 +31,7 @@ class TeamViewModel: ObservableObject, Identifiable {
         return team.isNation.toBool()
     }
     
-    var flagImage: Image {
+    var flagImage: Image? {
         return FlagNameConverter().flagImage(nationality: nationality, searchType: .team)
     }
     
