@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchBar: View {
-    
     // MARK: - Constants
     
     struct Constants {
