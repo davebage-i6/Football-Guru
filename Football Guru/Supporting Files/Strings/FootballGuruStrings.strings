@@ -1,0 +1,11 @@
+/* 
+  Strings.strings
+  Football Guru
+
+  Created by Dave Bage on 31/10/2021.
+  
+*/
+
+// MARK: - Main search view
+
+"mainsearch.navtitle" = "Football Guru Search"
