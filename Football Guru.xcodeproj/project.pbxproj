@@ -23,7 +23,6 @@
 		E4B13787272C1F070094DB29 /* FavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B13786272C1F070094DB29 /* FavouritesButton.swift */; };
 		E4B1378B272C31230094DB29 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1378A272C31230094DB29 /* NSManagedObjectContext.swift */; };
 		E4B1378D272C34E50094DB29 /* FavouritePlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1378C272C34E50094DB29 /* FavouritePlayersViewModel.swift */; };
-		E4B137CA272D8E420094DB29 /* FavouriteButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B137C9272D8E420094DB29 /* FavouriteButtonViewModel.swift */; };
 		E4B137CC272D95E80094DB29 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B137CB272D95E80094DB29 /* Placeholder.swift */; };
 		E4B137CE272DF1700094DB29 /* FlagNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B137CD272DF16F0094DB29 /* FlagNameConverter.swift */; };
 		E4B137D0272E77CB0094DB29 /* MoreResultsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B137CF272E77CA0094DB29 /* MoreResultsButton.swift */; };
@@ -81,7 +80,6 @@
 		E4B13786272C1F070094DB29 /* FavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesButton.swift; sourceTree = "<group>"; };
 		E4B1378A272C31230094DB29 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		E4B1378C272C34E50094DB29 /* FavouritePlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlayersViewModel.swift; sourceTree = "<group>"; };
-		E4B137C9272D8E420094DB29 /* FavouriteButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButtonViewModel.swift; sourceTree = "<group>"; };
 		E4B137CB272D95E80094DB29 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		E4B137CD272DF16F0094DB29 /* FlagNameConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagNameConverter.swift; sourceTree = "<group>"; };
 		E4B137CF272E77CA0094DB29 /* MoreResultsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreResultsButton.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				E4E4F360272AAB4B0009529D /* FetchedResultsViewModel.swift */,
 				E4B1378C272C34E50094DB29 /* FavouritePlayersViewModel.swift */,
-				E4B137C9272D8E420094DB29 /* FavouriteButtonViewModel.swift */,
 				E4B13770272BC9080094DB29 /* PlayerViewModel.swift */,
 				E4B13772272BC9150094DB29 /* TeamViewModel.swift */,
 			);
@@ -398,7 +395,6 @@
 				E4E4F36B272ACCAC0009529D /* FavouritesView.swift in Sources */,
 				E4E4F32D272A9AA40009529D /* Persistence.swift in Sources */,
 				E4B13781272C0F190094DB29 /* DetailView.swift in Sources */,
-				E4B137CA272D8E420094DB29 /* FavouriteButtonViewModel.swift in Sources */,
 				E4B137DF272E86050094DB29 /* SearchState.swift in Sources */,
 				E4B1378D272C34E50094DB29 /* FavouritePlayersViewModel.swift in Sources */,
 				E4E4F326272A9AA10009529D /* ContentView.swift in Sources */,
