@@ -126,6 +126,11 @@ class FetchedResultsViewModel: ObservableObject {
     // TODO: I would like to refactor the following methods relating to player searches etc. to be generic to avoid repetition
     private func searchPlayers(params: SearchQuery, checkOnly: Bool = false) {
         self.webservice.fetchResults(expecting: PlayerResponse.self, query: params)
+            .map {
+                return $0.result.players.map {
+                    PlayerViewModel($0)
+                }
+            }
             .sink { completion in
                 
                 if checkOnly {
@@ -134,11 +139,7 @@ class FetchedResultsViewModel: ObservableObject {
 
                 self.searches += 1
 
-            } receiveValue: { playerResponse in
-                let players = playerResponse.result.players.map {
-                    PlayerViewModel($0)
-                }
-                
+            } receiveValue: { players in
                 if params.offset != nil {
                     if !checkOnly {
                         self.fetchedPlayers += players
@@ -156,9 +157,14 @@ class FetchedResultsViewModel: ObservableObject {
             }
             .store(in: &self.cancellables)
     }
-    
+
     private func searchTeams(params: SearchQuery, checkOnly: Bool = false) {
         self.webservice.fetchResults(expecting: TeamResponse.self, query: params)
+            .map {
+                return $0.result.teams.map {
+                    TeamViewModel($0)
+                }
+            }
             .sink { completion in
                 
                 if checkOnly {
@@ -167,11 +173,7 @@ class FetchedResultsViewModel: ObservableObject {
 
                 self.searches += 1
 
-            } receiveValue: { teamResponse in
-                let teams = teamResponse.result.teams.map {
-                    TeamViewModel($0)
-                }
-                
+            } receiveValue: { teams in
                 if params.offset != nil {
                     if !checkOnly {
                         self.fetchedTeams += teams
